@@ -1,0 +1,28 @@
+{
+  "name": "rastaswap-subgraph",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "RastaSwap",
+  "repository": "git@github.com:rastaswap/rastaswap-subgraph.git",
+  "scripts": {
+    "codegen": "graph codegen --output-dir src/types/",
+    "build": "graph build",
+    "deploy": "graph deploy --access-token <TOKEN> --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ <GITHUB NAME>/<SUBGRAPH NAME> subgraph.yaml",
+    "create-local": "graph create rastaswap/rastaswap-subgraph --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy rastaswap/rastaswap-subgraph --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy-staging": "graph deploy $THE_GRAPH_GITHUB_USER/$THE_GRAPH_SUBGRAPH_NAME /rastaswap-subgraph --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/",
+    "watch-local": "graph deploy rastaswap/rastaswap-subgraph --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.19.0",
+    "@graphprotocol/graph-ts": "^0.19.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
